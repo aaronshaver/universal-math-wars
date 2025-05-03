@@ -9,6 +9,3 @@ class TestRegistration(unittest.TestCase):
         """Test that generate_uuid returns a valid UUID."""
         result = generate_uuid()
         self.assertIsInstance(result, uuid.UUID)
-
-if __name__ == '__main__':
-    unittest.main() 
