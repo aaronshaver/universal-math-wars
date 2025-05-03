@@ -10,6 +10,7 @@
 - React + Tailwind + Python Fast API
 - Give everyone own board to reduce syncing
 - browser fingerprint: IP + timezone + available height + available width
+- game end is scored based not time based
 
 ## Features
 
