@@ -9,6 +9,7 @@
 - No math operators, just numbers and power-ups
 - React + Tailwind + Python Fast API
 - Give everyone own board to reduce syncing
+- browser fingerprint: IP + timezone + available height + available width
 
 ## Features
 
