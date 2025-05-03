@@ -6,7 +6,7 @@
 
 ## Run tests + get coverage report
 
-clear && coverage run -m unittest discover && coverage report -m
+clear && pytest --cov=registration --cov-report=term-missing
 
 ## Design
 
