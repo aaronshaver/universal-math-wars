@@ -4,6 +4,10 @@
 
 - TDD unit tests and user registration
 
+## Run tests + get coverage report
+
+clear && coverage run -m unittest discover && coverage report -m
+
 ## Design
 
 - No math operators, just numbers and power-ups
