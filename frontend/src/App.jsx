@@ -97,8 +97,10 @@ const InfoTabs = () => {
 
 function App() {
   return (
-    // Use vh-100 and d-flex flex-column to make the container fill viewport height
-    <div className="container-fluid vh-100 d-flex flex-column px-0">
+    <div 
+      className="container-fluid vh-100 d-flex flex-column px-0"
+      style={{ overflow: 'hidden' }}
+    >
       <Header />
       <ScoreDisplay />
       <div className="row flex-grow-1 gx-3">
