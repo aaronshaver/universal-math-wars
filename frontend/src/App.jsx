@@ -42,7 +42,7 @@ const InfoTabs = () => {
   return (
     <div className="d-flex flex-column h-100 p-2 border rounded">
       <h5>Info</h5>
-      <ul className="nav nav-tabs nav-fill mt-2">
+      <ul className="nav nav-pills nav-fill mt-2">
         <li className="nav-item">
           <button 
             className={`nav-link ${activeTab === 'modifiers' ? 'active' : ''}`}
