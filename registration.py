@@ -1,5 +1,4 @@
 import uuid
 
-def generate_uuid() -> uuid.UUID:
-    """Generates a unique identifier."""
-    return uuid.uuid4() 
+def generate_uuid_string():
+    return str(uuid.uuid4())
