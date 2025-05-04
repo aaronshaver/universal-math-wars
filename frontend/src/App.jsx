@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
 const Header = () => (
-  <div className="py-2 ps-3 mb-3">
+  <div className="py-2 ps-3 mb-2">
     <h2 className="text-start">Universal Math Wars</h2>
   </div>
 );
 
 const ScoreDisplay = () => (
-  <div className="py-3 text-center">
+  <div className="py-2 text-center">
     <h1 className="display-4">-1,000,000</h1>
   </div>
 );
 
 const EventLog = () => (
   <div className="d-flex flex-column h-100 p-2 border rounded">
-    <div className="p-2 mb-2 border-bottom">
+    <div className="p-2 mb-1 border-bottom">
       <h5>Events</h5>
     </div>
     <textarea 
@@ -28,7 +28,7 @@ const EventLog = () => (
 
 const GameGrid = () => (
   <div className="d-flex flex-column h-100 p-2 border rounded">
-    <div className="p-2 mb-2 border-bottom">
+    <div className="p-2 mb-1 border-bottom">
       <h5>Grid</h5>
     </div>
     <div 
@@ -45,7 +45,7 @@ const InfoTabs = () => {
 
   return (
     <div className="d-flex flex-column h-100 p-2 border rounded">
-      <div className="p-2 mb-2 border-bottom">
+      <div className="p-2 mb-1 border-bottom">
         <h5>Info</h5>
       </div>
       <ul className="nav nav-pills nav-fill">
