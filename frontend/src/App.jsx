@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Header = () => (
-  <div className="py-2">
+  <div className="py-2 ps-3">
     <h2 className="text-start">Universal Math Wars</h2>
   </div>
 );
@@ -25,11 +25,11 @@ const EventLog = () => (
 );
 
 const GameGrid = () => (
-  <div className="d-flex flex-column h-100 p-2 border rounded align-items-center justify-content-center">
+  <div className="d-flex flex-column h-100 p-2 border rounded">
     <h5>Grid</h5>
     <div 
-      className="border border-secondary bg-secondary-subtle mt-2"
-      style={{ width: '80%', height: '80%', minHeight: '200px' }}
+      className="border border-secondary bg-secondary-subtle mt-2 flex-grow-1 d-flex align-items-center justify-content-center"
+      style={{ width: '100%', minHeight: '200px' }}
     >
       (Grid Placeholder)
     </div>
@@ -41,7 +41,8 @@ const InfoTabs = () => {
 
   return (
     <div className="d-flex flex-column h-100 p-2 border rounded">
-      <ul className="nav nav-tabs nav-fill">
+      <h5>Info</h5>
+      <ul className="nav nav-tabs nav-fill mt-2">
         <li className="nav-item">
           <button 
             className={`nav-link ${activeTab === 'modifiers' ? 'active' : ''}`}
