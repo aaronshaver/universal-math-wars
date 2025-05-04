@@ -10,6 +10,8 @@ clear && pytest --cov=registration --cov-report=term-missing
 
 ## Design
 
+- For event log + leaderboards: to save on db reads, compute once on backend, then serve in-memory versions to all clients
+- Try to keep DB access centralized to one file (database.py) so that migrating to a new db (like Postgres) is easier
 - No math operators, just numbers + power-ups
 - React + Tailwind + Python Fast API
 - Give everyone own board to reduce syncing
