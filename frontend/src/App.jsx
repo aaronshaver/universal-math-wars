@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Header = () => (
   <div className="py-2">
-    <h2 className="text-start">Universal Color Wars</h2>
+    <h2 className="text-start">Universal Math Wars</h2>
   </div>
 );
 
@@ -29,7 +29,7 @@ const GameGrid = () => (
     <h5>Grid</h5>
     <div 
       className="border border-secondary bg-secondary-subtle mt-2"
-      style={{ width: '80%', height: '80%', minHeight: '200px' }} // Basic placeholder size
+      style={{ width: '80%', height: '80%', minHeight: '200px' }}
     >
       (Grid Placeholder)
     </div>
@@ -97,7 +97,7 @@ const InfoTabs = () => {
 function App() {
   return (
     // Use vh-100 and d-flex flex-column to make the container fill viewport height
-    <div className="container-fluid vh-100 d-flex flex-column">
+    <div className="container-fluid vh-100 d-flex flex-column px-0">
       <Header />
       <ScoreDisplay />
       <div className="row flex-grow-1 gx-3">
