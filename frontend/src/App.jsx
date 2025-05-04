@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Header = () => (
-  <div className="py-2 ps-3">
+  <div className="py-2 ps-3 mb-3">
     <h2 className="text-start">Universal Math Wars</h2>
   </div>
 );
@@ -14,9 +14,11 @@ const ScoreDisplay = () => (
 
 const EventLog = () => (
   <div className="d-flex flex-column h-100 p-2 border rounded">
-    <h5>Events</h5>
+    <div className="p-2 mb-2 border-bottom">
+      <h5>Events</h5>
+    </div>
     <textarea 
-      className="form-control flex-grow-1 mt-2" 
+      className="form-control flex-grow-1"
       readOnly 
       placeholder="Event log goes here..."
       style={{ resize: 'none' }} // Prevent manual resize
@@ -26,9 +28,11 @@ const EventLog = () => (
 
 const GameGrid = () => (
   <div className="d-flex flex-column h-100 p-2 border rounded">
-    <h5>Grid</h5>
+    <div className="p-2 mb-2 border-bottom">
+      <h5>Grid</h5>
+    </div>
     <div 
-      className="border border-secondary bg-secondary-subtle mt-2 flex-grow-1 d-flex align-items-center justify-content-center"
+      className="border border-secondary bg-secondary-subtle flex-grow-1 d-flex align-items-center justify-content-center"
       style={{ width: '100%', minHeight: '200px' }}
     >
       (Grid Placeholder)
@@ -41,8 +45,10 @@ const InfoTabs = () => {
 
   return (
     <div className="d-flex flex-column h-100 p-2 border rounded">
-      <h5>Info</h5>
-      <ul className="nav nav-pills nav-fill mt-2">
+      <div className="p-2 mb-2 border-bottom">
+        <h5>Info</h5>
+      </div>
+      <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
           <button 
             className={`nav-link ${activeTab === 'modifiers' ? 'active' : ''}`}
