@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
 const Header = () => (
-  <div className="py-2 ps-3 mb-2">
-    <h2 className="text-start">Universal Math Wars</h2>
+  <div className="d-flex justify-content-between align-items-center py-2 ps-3 mb-2">
+    <h2 className="text-start mb-0">Universal Math Wars</h2>
+    <small className="text-end pe-3">Please donate to help with server costs</small>
   </div>
 );
 
 const ScoreDisplay = () => (
   <div className="py-2 text-center">
-    <h1 className="display-4">-1,000,000</h1>
+    <h1 className="display-4 fw-bold">-1,000,000</h1>
   </div>
 );
 
