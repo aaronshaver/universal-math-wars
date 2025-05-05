@@ -7,8 +7,8 @@ npm run dev &
 VITE_PID=$!
 
 # FastAPI
-cd backend
-poetry run uvicorn main:app --reload
+cd ..
+poetry run uvicorn backend.main:app --reload
 API_PID=$!
 
 trap "kill $VITE_PID $API_PID" SIGINT SIGTERM

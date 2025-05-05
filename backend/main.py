@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from registration import generate_uuid_string
+from backend.registration import generate_uuid_string
 
 app = FastAPI(title="Universal Math Wars API")
 app.add_middleware(
