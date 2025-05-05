@@ -3,7 +3,17 @@ import React, { useState } from 'react';
 const Header = () => (
   <div className="d-flex justify-content-between align-items-center py-2 ps-3 mb-2">
     <h2 className="text-start mb-0">Universal Math Wars</h2>
-    <small className="text-end pe-3">Please donate to help with server costs</small>
+    <small className="text-end pe-3 d-inline-flex align-items-center">
+        Keep the servers running:
+        <form action="https://www.paypal.com/donate" className="d-inline ms-2" method="post" target="_top">
+        <input type="hidden" name="business" value="QHWPTYWNNPL5G" />
+        <input type="hidden" name="no_recurring" value="1" />
+        <input type="hidden" name="item_name" value="Thanks for helping me pay the AWS bill for Universal Math Wars" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+      </form>
+      </small>
   </div>
 );
 
