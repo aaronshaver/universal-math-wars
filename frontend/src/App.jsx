@@ -131,6 +131,7 @@ const Login = () => (
 
 const Register = () => {
   const [uuid, setUuid] = useState('');
+  const [copyButtonText, setCopyButtonText] = useState('Copy');
 
   useEffect(() => {
     fetch('http://localhost:8000/api/v1/generate-uuid')
@@ -148,6 +149,17 @@ const Register = () => {
       });
   }, []);
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(uuid)
+      .then(() => {
+        setCopyButtonText('Copied!');
+        setTimeout(() => setCopyButtonText('Copy'), 2000); // Reset after 2 seconds
+      })
+      .catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+  };
+
   return (
   <div className="p-3 border rounded">
     <h5>If you do not have an account, register:</h5>
@@ -158,13 +170,22 @@ const Register = () => {
       </div>
       <div className="mb-2">
         <label htmlFor="registerPassword" className="form-label">Auto-generated Password</label>
-        <input 
-          type="text"
-          className="form-control" 
-          id="registerPassword" 
-          value={uuid} 
-          readOnly // Make read-only since it's generated
-        />
+        <div className="input-group">
+          <input
+            type="text"
+            className="form-control"
+            id="registerPassword"
+            value={uuid}
+            readOnly // Make read-only since it's generated
+          />
+          <button
+            className="btn btn-outline-secondary"
+            type="button"
+            onClick={handleCopy}
+          >
+            {copyButtonText}
+          </button>
+        </div>
       </div>
       <div className="alert alert-danger" role="alert">
         Password cannot be reset or retreived later; store it in a password manager.
