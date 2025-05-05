@@ -8,10 +8,13 @@
 
 clear && pytest --cov=registration --cov-report=term-missing
 
-## Run servers locally
+## Config files note
 
-npm run dev
-uvicorn main:app --reload
+Stuff like:
+
+`VITE_API_BASE_URL=http://localhost:8000`
+
+Should live in /frontend/.env.development
 
 ## Design
 

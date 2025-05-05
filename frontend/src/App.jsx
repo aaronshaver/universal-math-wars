@@ -134,7 +134,8 @@ const Register = () => {
   const [copyButtonText, setCopyButtonText] = useState('Copy');
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/generate-uuid')
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'; // Fallback for Vite
+    fetch(`${baseUrl}/api/v1/generate-uuid`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
