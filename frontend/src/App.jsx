@@ -138,7 +138,7 @@ const Register = () => (
         <input type="text" className="form-control" id="registerUsername" />
       </div>
       <div className="mb-2">
-        <label htmlFor="registerPassword" className="form-label">Password</label>
+        <label htmlFor="registerPassword" className="form-label">Auto-generated Password</label>
         <input type="password" className="form-control" id="registerPassword" />
       </div>
       <div className="alert alert-danger" role="alert">
