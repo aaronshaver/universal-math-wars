@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Header = () => (
   <div className="d-flex justify-content-between align-items-center py-2 ps-3 mb-2">
@@ -129,7 +129,26 @@ const Login = () => (
   </div>
 );
 
-const Register = () => (
+const Register = () => {
+  const [uuid, setUuid] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost:8000/api/v1/generate-uuid')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setUuid(data.uuid);
+      })
+      .catch(error => {
+        console.error('Error fetching UUID:', error);
+      });
+  }, []);
+
+  return (
   <div className="p-3 border rounded">
     <h5>If you do not have an account, register:</h5>
     <form>
@@ -139,7 +158,13 @@ const Register = () => (
       </div>
       <div className="mb-2">
         <label htmlFor="registerPassword" className="form-label">Auto-generated Password</label>
-        <input type="password" className="form-control" id="registerPassword" />
+        <input 
+          type="text"
+          className="form-control" 
+          id="registerPassword" 
+          value={uuid} 
+          readOnly // Make read-only since it's generated
+        />
       </div>
       <div className="alert alert-danger" role="alert">
         Password cannot be reset or retreived later; store it in a password manager.
@@ -150,7 +175,8 @@ const Register = () => (
       <button type="submit" className="btn btn-primary">Submit</button>
     </form>
   </div>
-);
+  );
+};
 
 const isLoggedIn = () => {
   return false; 

@@ -8,6 +8,11 @@
 
 clear && pytest --cov=registration --cov-report=term-missing
 
+## Run servers locally
+
+npm run dev
+uvicorn main:app --reload
+
 ## Design
 
 - Two fields: display name and username, because would be useful for changing obscene names, giving people rename ability

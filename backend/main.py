@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .registration import generate_uuid_string
+from registration import generate_uuid_string
 
 app = FastAPI(title="Universal Math Wars API")
 
