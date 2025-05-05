@@ -6,6 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "universal-math-wars"
 version = "0.0.1"
 
+[tool.poetry]
+package-mode = false
+
 [tool.pytest.ini_options]
 addopts = [
     "--cov=backend",
@@ -17,4 +20,11 @@ pythonpath = ["."]
 omit = [
     "*/__init__.py",
     "*/test_*.py",
-] 
+]
+
+[tool.poetry.dependencies]
+python = "^3.11" # Assuming Python 3.11+, adjust if needed
+fastapi = "*"
+sqlmodel = "^0.0.19"
+pymysql = "^1.1.1"
+uvicorn = {extras = ["standard"], version = "*"}
