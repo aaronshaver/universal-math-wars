@@ -112,6 +112,50 @@ const InfoTabs = () => {
   );
 };
 
+const Login = () => (
+  <div className="p-3 border rounded mb-3">
+    <h5>If you have an account, log in:</h5>
+    <form>
+      <div className="mb-2">
+        <label htmlFor="loginUsername" className="form-label">Username</label>
+        <input type="text" className="form-control" id="loginUsername" />
+      </div>
+      <div className="mb-2">
+        <label htmlFor="loginPassword" className="form-label">Password</label>
+        <input type="password" className="form-control" id="loginPassword" />
+      </div>
+      <button type="submit" className="btn btn-primary">Submit</button>
+    </form>
+  </div>
+);
+
+const Register = () => (
+  <div className="p-3 border rounded">
+    <h5>If you do not have an account, register:</h5>
+    <form>
+      <div className="mb-2">
+        <label htmlFor="registerUsername" className="form-label">Username</label>
+        <input type="text" className="form-control" id="registerUsername" />
+      </div>
+      <div className="mb-2">
+        <label htmlFor="registerPassword" className="form-label">Password</label>
+        <input type="password" className="form-control" id="registerPassword" />
+      </div>
+      <div className="alert alert-danger" role="alert">
+        Password cannot be reset or retreived later; store it in a password manager.
+      </div>
+      <div className="mb-2">
+        You've been assigned to: [Team Name Placeholder]
+      </div>
+      <button type="submit" className="btn btn-primary">Submit</button>
+    </form>
+  </div>
+);
+
+const isLoggedIn = () => {
+  return false; 
+};
+
 function App() {
   return (
     <div 
@@ -119,18 +163,29 @@ function App() {
       style={{ overflow: 'hidden' }}
     >
       <Header />
-      <ScoreDisplay />
-      <div className="row flex-grow-1 gx-3">
-        <div className="col-md-4 d-flex flex-column pb-3">
-          <EventLog />
+      {isLoggedIn() ? (
+        <>
+          <ScoreDisplay />
+          <div className="row flex-grow-1 gx-3">
+            <div className="col-md-4 d-flex flex-column pb-3">
+              <EventLog />
+            </div>
+            <div className="col-md-4 d-flex flex-column pb-3">
+              <GameGrid />
+            </div>
+            <div className="col-md-4 d-flex flex-column pb-3">
+              <InfoTabs />
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+          <div className="col-md-6 col-lg-4">
+            <Login />
+            <Register />
+          </div>
         </div>
-        <div className="col-md-4 d-flex flex-column pb-3">
-          <GameGrid />
-        </div>
-        <div className="col-md-4 d-flex flex-column pb-3">
-          <InfoTabs />
-        </div>
-      </div>
+      )}
     </div>
   );
 }
