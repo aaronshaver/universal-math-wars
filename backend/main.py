@@ -1,8 +1,14 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from registration import generate_uuid_string
 
 app = FastAPI(title="Universal Math Wars API")
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Vite dev server
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/api/v1/generate-uuid")
 async def get_uuid():
