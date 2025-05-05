@@ -8,13 +8,19 @@
 
 clear && pytest --cov=registration --cov-report=term-missing
 
+## Run database
+
+docker run --name mysql-dev -e MYSQL_ROOT_PASSWORD=root_password -e MYSQL_DATABASE=mathwars_db -e MYSQL_USER=dev_user -e MYSQL_PASSWORD=your_app_password -p 3306:3306 -d mysql:8.0
+
 ## Config files note
 
 Stuff like:
 
 `VITE_API_BASE_URL=http://localhost:8000`
 
-Should live in /frontend/.env.development
+Should live in /frontend/.env.development.
+
+Backend is different as they would be in environment variables in AWS itself I think. So it's plain .env file.
 
 ## Design
 

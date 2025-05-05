@@ -28,3 +28,4 @@ fastapi = "*"
 sqlmodel = "^0.0.19"
 pymysql = "^1.1.1"
 uvicorn = {extras = ["standard"], version = "*"}
+python-dotenv = "^1.0.0"

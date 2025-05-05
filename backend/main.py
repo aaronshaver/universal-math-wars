@@ -13,4 +13,4 @@ app.add_middleware(
 @app.get("/api/v1/generate-uuid")
 async def get_uuid():
     generated_uuid = generate_uuid_string()
-    return {"uuid": generated_uuid} 
+    return {"uuid": generated_uuid}
