@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.registration import generate_uuid_string
 
-app = FastAPI(title="Universal Math Wars API")
+app = FastAPI(title="Idle Number Wars API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],  # Vite dev server
