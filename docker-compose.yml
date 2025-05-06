@@ -22,9 +22,12 @@ services:
     depends_on:
       - db
     environment:
-      # Add any environment variables your backend needs, e.g., DATABASE_URL
-      # DATABASE_URL: mysql+mysqlconnector://dev_user:dev_password@db:3306/mathwars_db
-      PYTHONUNBUFFERED: 1 # Recommended for seeing logs in Docker
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: dev_user
+      DB_PASSWORD: dev_password
+      DB_NAME: mathwars_db
+      PYTHONUNBUFFERED: 1
 
   frontend:
     build:
