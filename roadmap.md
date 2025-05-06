@@ -10,6 +10,7 @@
 
 ## Milestone 0: Scaffolding
 
+- Get the new Docker setup running with all three servers
 - username and display name fields must be enforced unique in db and Python and JavaScript
 - make sure db read and write full stack works by pulling team name via username+password cookie read
 - browser property reading to set fingerprint (3 files: IP, avail width, avail height); https://amiunique.org/fingerprint

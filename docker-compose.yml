@@ -1,0 +1,43 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-dev
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: mathwars_db
+      MYSQL_USER: dev_user
+      MYSQL_PASSWORD: dev_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    environment:
+      # Add any environment variables your backend needs, e.g., DATABASE_URL
+      # DATABASE_URL: mysql+mysqlconnector://dev_user:dev_password@db:3306/mathwars_db
+      PYTHONUNBUFFERED: 1 # Recommended for seeing logs in Docker
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      # If you have a node_modules subdirectory in your local frontend that you want to keep 
+      # isolated from the container's node_modules, uncomment the next line:
+      - /app/node_modules 
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data: 
