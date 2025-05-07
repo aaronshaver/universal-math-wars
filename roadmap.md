@@ -10,7 +10,8 @@
 
 ## Milestone 0: Scaffolding
 
-- in events log: "Welcome, display_name. You are on <Team Name>." (proves db read+write)
+>> COOKIE + DB -- final major local infrastructure <<
+- in events log: "Welcome, display_name. You are on <Team Name>." (proves cookie use and db read+write)
  
 ## Milestone 1: Playable local machine game 
 
