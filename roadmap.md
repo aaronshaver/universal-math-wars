@@ -15,6 +15,7 @@
  
 ## Milestone 1: Playable local machine game 
 
+- Create a blurb above Registration form describing game
 - Captcha for the game: 5 digit even number embedded in various length prefix and postfix odds
 - Username and display name fields must be enforced unique in db and Python and JavaScript (means we'll need db read to check for dupe names)
 - One way hash the UUID password to save to db; maybe passlib?
@@ -35,6 +36,7 @@
 
 - Minify/obfuscate process before deploying
 - Cloudflare HTTPS
+- be aware of mixed content https issue with cloudfare: https://developers.cloudflare.com/ssl/edge-certificates/additional-options/always-use-https/#limitations
 
 ## Milestone 3: Incorporate feedback from beta test
 
