@@ -132,6 +132,7 @@ const Login = () => (
 const Register = () => {
   const [uuid, setUuid] = useState('');
   const [copyButtonText, setCopyButtonText] = useState('Copy');
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'; // Fallback for Vite
@@ -161,13 +162,46 @@ const Register = () => {
       });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+    try {
+      const response = await fetch(`${baseUrl}/api/v1/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: username, password: uuid }),
+      });
+
+      const data = await response.json();
+      console.log('Registration response:', data);
+
+      if (response.ok) {
+        console.log('Registration successful:', data.message, 'User ID:', data.user_id);
+      } else {
+        console.error('Registration failed:', data.detail || 'Unknown error');
+      }
+    } catch (error) {
+      console.error('Registration request failed due to network or other error:', error);
+    }
+  };
+
   return (
   <div className="p-3 border rounded">
     <h5>If you do not have an account, register:</h5>
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="mb-2">
         <label htmlFor="registerUsername" className="form-label">Username</label>
-        <input type="text" className="form-control" id="registerUsername" />
+        <input
+          type="text"
+          className="form-control"
+          id="registerUsername"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
       </div>
       <div className="mb-2">
         <label htmlFor="registerPassword" className="form-label">Auto-generated Password</label>
@@ -177,7 +211,7 @@ const Register = () => {
             className="form-control"
             id="registerPassword"
             value={uuid}
-            readOnly // Make read-only since it's generated
+            readOnly
           />
           <button
             className="btn btn-outline-secondary"
