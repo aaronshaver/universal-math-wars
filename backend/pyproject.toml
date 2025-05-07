@@ -9,9 +9,13 @@ version = "0.0.1"
 [tool.poetry]
 package-mode = false
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+
 [tool.pytest.ini_options]
 addopts = [
-    "--cov=backend",
+    "--cov=./",
     "--cov-config=pyproject.toml",
 ]
 pythonpath = ["."]
@@ -20,6 +24,7 @@ pythonpath = ["."]
 omit = [
     "*/__init__.py",
     "*/test_*.py",
+    "*/conftest.py",
 ]
 
 [tool.poetry.dependencies]
@@ -30,3 +35,4 @@ pymysql = "^1.1.1"
 uvicorn = {extras = ["standard"], version = "*"}
 python-dotenv = "^1.0.0"
 cryptography = "*"
+httpx = "^0.28.1"
