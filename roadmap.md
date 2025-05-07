@@ -10,14 +10,15 @@
 
 ## Milestone 0: Scaffolding
 
-- Get the new Docker setup running with all three servers
-- username and display name fields must be enforced unique in db and Python and JavaScript
-- make sure db read and write full stack works by pulling team name via username+password cookie read
-- browser property reading to set fingerprint (3 files: IP, avail width, avail height); https://amiunique.org/fingerprint
-- one way hash the UUID password to save to db
-
+- in events log: "Welcome, display_name. You are on <Team Name>." (proves db read+write)
+ 
 ## Milestone 1: Playable local machine game 
 
+- Username and display name fields must be enforced unique in db and Python and JavaScript
+- One way hash the UUID password to save to db; maybe passlib
+- Browser property reading to set fingerprint (3 files: IP, avail width, avail height); https://amiunique.org/fingerprint
+- Chain power up that repeats the next number selected X times over the next X cycles
+- Captcha table with id, problem, solution so client receives id and problem and sends id and solution
 - Use ahead/behind language instead of winning, losing to not let people lose hope
 - pop a modal final score up at end of game for closure/satisfaction
 - final score modal has Join Next Game button
