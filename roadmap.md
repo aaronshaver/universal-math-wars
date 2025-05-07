@@ -14,6 +14,7 @@
  
 ## Milestone 1: Playable local machine game 
 
+- Captcha for the game: 5 digit even number embedded in various length prefix and postfix odds
 - Username and display name fields must be enforced unique in db and Python and JavaScript
 - One way hash the UUID password to save to db; maybe passlib
 - Browser property reading to set fingerprint (3 files: IP, avail width, avail height); https://amiunique.org/fingerprint
