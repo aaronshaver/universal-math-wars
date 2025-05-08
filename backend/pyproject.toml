@@ -12,6 +12,7 @@ package-mode = false
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 pytest-cov = "^6.1.1"
+sqlalchemy-utils = "^0.41.2"
 
 [tool.pytest.ini_options]
 addopts = [
